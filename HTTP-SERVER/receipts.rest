@@ -1,0 +1,67 @@
+###List receipts
+GET http://localhost:8080/receipts
+
+
+
+###Create new receipt Example 1
+POST http://localhost:8080/receipts/process
+Content-Type: application/json
+
+{
+  "retailer": "Target",
+  "purchaseDate": "2022-01-01",
+  "purchaseTime": "13:01",
+  "items": [
+    {
+      "shortDescription": "Mountain Dew 12PK",
+      "price": "6.49"
+    },{
+      "shortDescription": "Emils Cheese Pizza",
+      "price": "12.25"
+    },{
+      "shortDescription": "Knorr Creamy Chicken",
+      "price": "1.26"
+    },{
+      "shortDescription": "Doritos Nacho Cheese",
+      "price": "3.35"
+    },{
+      "shortDescription": "   Klarbrunn 12-PK 12 FL OZ  ",
+      "price": "12.00"
+    }
+  ],
+  "total": "35.35"
+}
+
+###Create new receipt Example 2
+POST http://localhost:8080/receipts/process
+Content-Type: application/json
+
+{
+  "retailer": "M&M Corner Market",
+  "purchaseDate": "2022-03-20",
+  "purchaseTime": "14:33",
+  "items": [
+    {
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    }
+  ],
+  "total": "9.00"
+}
+
+
+###Deletes receipt
+DELETE http://localhost:8080/receipts/uuid
+
+
+###Get Specific Receipt Points
+GET  http://localhost:8080/receipts/8106a5a8-ba86-48a6-ae55-57297ce13f7c
